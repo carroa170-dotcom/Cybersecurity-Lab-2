@@ -30,13 +30,14 @@ Objective: To monitor and analyse the network signature of an automated brute-fo
 
  ![image](https://github.com/user-attachments/assets/f3ae12fa-ab52-4ee1-82c3-d80d5b4f5f7c)
 
+The Wireshark capture illustrates the standard SSHv2 handshake sequence, including Key Exchange Initialisation and Diffie-Hellman key establishment. While the content of the authentication attempts remains protected within Encrypted Packets, the high frequency of these exchanges provides a distinct network signature. This demonstrates that while the payload is invisible to an observer, the metadata—specifically the volume and timing of packets—reveals the occurrence of an automated discovery process
 
 ## 6. Phase 6: Custom Python Automation
 Objective: To develop and execute a standalone Python tool for automated credential validation. By utilising the Paramiko library, the manual brute-force process is streamlined into a programmatically driven sequence. This phase demonstrates the ability to automate security auditing tasks, allowing for efficient verification of identified credentials through a custom scripted interface.
 
 ![image](https://github.com/user-attachments/assets/fe8e0a85-ef36-4f4e-9dd7-d9cfdf6bfffc)
 
-
+This phase demonstrates the programmatic verification of credentials using the Paramiko library. By executing the connection sequence within the Python interpreter, we can observe the direct interaction with the SSH service. As shown in the terminal, the successful execution of the ssh.connect method without returning an authentication error confirms a valid credential match. This manual verification serves as the functional logic for developing more complex, multi-threaded auditing tools.
 
 # Conclusion
 The successful completion of Lab 2 demonstrates the critical relationship between service configuration, automated auditing, and network visibility. Through the deployment of an SSH server and the subsequent execution of dictionary-based attacks, the vulnerability of weak credentials to high-speed automation was clearly illustrated.
